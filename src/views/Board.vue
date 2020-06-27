@@ -1,26 +1,29 @@
 <template>
   <div id="app">
-    <header>
-      <h1>게시판</h1>
-    </header>
-    <div>
-      <Button>
-        <img class="writing-button" src="../assets/edit.png" alt="">
-      </Button>
-    </div>
-    <div>
-      <BoardList/>
-    </div>
-
+    <Header :title="title"/>
+    <Button/>
+    <BoardList/>
+    <PageCountBtn/>
   </div>
 </template>
 
 <script>
+import  Header from "../components/Header";
 import  BoardList from "../components/BoardList";
+import PageCountBtn from "../components/PageCountBtn"
+import Button from "../components/Button"
 export default {
   components:{
+    Header,
+    Button,
     BoardList,
+    PageCountBtn
   },
+  data(){
+    return {
+      title: '게시판',
+    }
+  }
 
 }
 </script>
