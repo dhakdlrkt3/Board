@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Board from './Board.vue'
+import Board from './views/Board.vue'
 import router from './router'
 import store from './store'
 
