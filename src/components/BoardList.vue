@@ -8,19 +8,23 @@
       <th>글쓴이</th>
       <th>조회수</th>
     </tr>
-  <tbody>
     <tr v-for="content in Contents" :key="content.id" >
-     <Content :content="content"/>
+        <td>{{ content.id }}</td>
+        <td>{{ content.tag }}</td>
+        <td><a href="url">{{ content.title }}</a></td>
+        <td>{{ content.date }}</td>
+        <td>{{ content.writer }}</td>
+        <td>{{ content.hit }}</td>
+     <!-- <Content :content="content"/> -->
     </tr>
-</tbody>
 </table>
 </template>
 
 <script>
-import Content from "./Content";
+// import Content from "./Content";
 export default {
   components:{
-    Content,
+    // Content,
   },
   variables:{
     url:'',
