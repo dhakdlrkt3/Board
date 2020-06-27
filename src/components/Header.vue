@@ -5,9 +5,10 @@
 </template>
 <script>
 export default {
+    name: 'HeaderView',
     props:{
         title: {
-            type: Object,
+            type: String,
             required: true
         }
     }

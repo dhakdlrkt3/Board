@@ -39,7 +39,4 @@ export default {
     margin: 4px 2px;
     cursor: pointer;
   }
-  .BoardContents{
-    text-align: center;
-  }
 </style>
