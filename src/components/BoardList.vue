@@ -8,14 +8,6 @@
       <th>글쓴이</th>
       <th>조회수</th>
     </tr>
-    <!-- <tr v-for="i in pageSize" :key="i" >
-        <td>{{ Contents[i].id }}</td>
-        <td>{{ Contents[i].tag }}</td>
-        <td><a href="url">{{ Contents[i].title }}</a></td>
-        <td>{{ Contents[i].date }}</td>
-        <td>{{ Contents[i].writer }}</td>
-        <td>{{ Contents[i].hit }}</td>
-        </tr> -->
     <tr v-for="content in startList()" :key="content.id" >
         <td>{{ content.id }}</td>
         <td>{{ content.tag }}</td>
@@ -38,11 +30,7 @@ export default {
   variables:{
     url:'',
   },
-  methods:{
-    startList(){
-      return this.Contents.slice(this.startNum);
-    }
-  },
+  
   data(){
     return{
       Contents : Data,
@@ -50,9 +38,21 @@ export default {
       pageSize: 10,
     }
   },
+  methods:{
+    startList(){
+      let contents = this.Contents.slice(this.startNum);
+      if (contents.length  >= 10 ) contents.length = 10;
+      let content =[];
+      
+      let i = Number;
+      for( i = 0; i < contents.length; i++){
+        content[i] =  contents[i];
+      }
+      return content;
+    }
+  },
   created(){
     eventBus.$on('movePage', (startNum) => {
-      console.log(startNum);
       this.startNum = startNum;
     })
   },

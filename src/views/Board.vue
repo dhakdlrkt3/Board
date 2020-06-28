@@ -3,7 +3,10 @@
     <Header :title="title"/>
     <Button/>
     <BoardList/>
-    <PageCountBtn :btnLength="btnLength"/>
+    <PageCountBtn 
+      :btnLength="btnLength"
+      :pageSize="pageSize"
+      />
   </div>
 </template>
 
@@ -31,7 +34,6 @@ export default {
   computed:{
     btnLength(){
         let Length = Math.floor( ( this.dataLeng.length -1) / this.pageSize ) + 1; // math.floor = 가장 큰 값을 반환
-        console.log(Length)
         return Length;
     },
   }
