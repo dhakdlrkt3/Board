@@ -40,10 +40,17 @@ export default {
   },
   methods:{
     startList(){
-      let contents = this.Contents.slice(this.startNum);
+      // this.Contents.sort(function(a,b){
+      //   return b['id'] - a['id'] ;
+      // });
+
+      let contents = this.Contents.sort(function(a,b){
+        return b['id'] - a['id'] ;
+      }).slice(this.startNum);
+      
       if (contents.length  >= 10 ) contents.length = 10;
       let content =[];
-      
+
       let i = Number;
       for( i = 0; i < contents.length; i++){
         content[i] =  contents[i];
