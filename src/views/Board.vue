@@ -3,7 +3,7 @@
     <Header :title="title"/>
     <Button/>
     <BoardList/>
-    <PageCountBtn/>
+    <PageCountBtn :btnLength="btnLength"/>
   </div>
 </template>
 
@@ -12,6 +12,8 @@ import  Header from "../components/Header";
 import  BoardList from "../components/BoardList";
 import PageCountBtn from "../components/PageCountBtn"
 import Button from "../components/Button"
+import Data from '@/data'
+
 export default {
   components:{
     Header,
@@ -22,9 +24,17 @@ export default {
   data(){
     return {
       title: '게시판',
+      pageSize: 10,
+      dataLeng: Data
     }
+  },
+  computed:{
+    btnLength(){
+        let Length = Math.floor( ( this.dataLeng.length -1) / this.pageSize ) + 1; // math.floor = 가장 큰 값을 반환
+        console.log(Length)
+        return Length;
+    },
   }
-
 }
 </script>
 <style>
