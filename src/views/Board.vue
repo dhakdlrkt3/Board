@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <Header :title="title"/>
     <Button/>
     <BoardList/>
@@ -7,7 +7,12 @@
       :btnLength="btnLength"
       :pageSize="pageSize"
       />
+    <button @click="test">click</button>
+    <router-link :to="{name: 'About'}">board-detail</router-link>
+    <router-view/>
+
   </div>
+  
 </template>
 
 <script>
@@ -36,6 +41,11 @@ export default {
         let Length = Math.floor( ( this.dataLeng.length -1) / this.pageSize ) + 1; // math.floor = 가장 큰 값을 반환
         return Length;
     },
+  },
+  methods:{
+    test(){
+      this.$router.push({name: "About"})
+    }
   }
 }
 </script>
