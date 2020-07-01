@@ -4,9 +4,6 @@ import Board from '../views/Board.vue'
 
 Vue.use(VueRouter)
 
-// const About = () => {
-//   return import(/* webpackChunkName: "about" */ '../views/About.vue')
-// }
   const routes = [
   {
     path: '/',
@@ -14,9 +11,9 @@ Vue.use(VueRouter)
     component: Board,
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/Writing',
+    name: 'Writing',
+    component: () => import(/* webpackChunkName: "Writing" */ '../views/Writing.vue')
   },
   {
     path: "/detail/:ContentsId",

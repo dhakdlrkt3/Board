@@ -19,8 +19,8 @@
                 </tr>
             </tbody>
         </table>
-        <button @click="updateCtn">수정</button>
-        <button @click="deleteCtn">삭제</button>
+        <button @click="goToWriting">수정</button>
+        <button @click="goToDelete">삭제</button>
     </div>
 </template>
 <script>
@@ -43,11 +43,10 @@ export default {
         goToBoard(){
              this.$router.push({name: 'Board'});
         },
-        updateCtn(){
-             this.data = this.$route.params
-             console.log(this.$route);
+        goToWriting(){
+             this.$router.push({name: 'Writing', params: this.data});
         },
-        deleteCtn(){
+        goToDelete(){
              this.data = this.$route.params
              console.log(this.$route);
         }
