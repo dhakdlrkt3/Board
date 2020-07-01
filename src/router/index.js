@@ -19,10 +19,10 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: "/detail/:id",
+    path: "/detail/:ContentsId",
     name: "board-detail",
     component: () => import(/* webpackChunkName: "board-detail" */ '../views/BoardDetail.vue' ),
-  }
+  },
 ]
 
 const router = new VueRouter({

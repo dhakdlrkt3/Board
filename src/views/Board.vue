@@ -7,8 +7,6 @@
       :btnLength="btnLength"
       :pageSize="pageSize"
       />
-    <button @click="test">click</button>
-    <router-link :to="{name: 'About'}">board-detail</router-link>
     <router-view/>
 
   </div>
