@@ -34,6 +34,8 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- 깃 버킷 코밋 테스트 -->
         <button @click="Save">저장</button>
 
         

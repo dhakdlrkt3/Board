@@ -9,6 +9,7 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Board',
     component: Board,
+    
   },
   {
     path: '/Writing',
