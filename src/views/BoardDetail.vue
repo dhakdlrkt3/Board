@@ -41,8 +41,7 @@ export default {
     },
     methods:{
         goToBoard(){
-             this.data = this.$route.params
-             console.log(this.$route);
+             this.$router.push({name: 'Board'});
         },
         updateCtn(){
              this.data = this.$route.params
@@ -52,20 +51,6 @@ export default {
              this.data = this.$route.params
              console.log(this.$route);
         }
-    },
-    computed:{
-        // test(){
-        //     //console.log(this.$route.params.Contentsid);
-        //     if(this.$route.params.id == undefined){
-        //         this.data = this.Content.find(item => item.id == this.$route.params.Contentsid);
-        //         return this.data;
-        //     }
-        //     else{
-        //         this.data = this.$route.params.date;
-        //         return this.data;
-        //     }
-        // }
-        
     },
     created(){
         if(this.$route.params.id == undefined){
